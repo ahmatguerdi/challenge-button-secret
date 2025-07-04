@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Défi du Bouton Secret</title>
+  <style>
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 10px;
+      margin-top: 30px;
+    }
+    button {
+      height: 100px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .styled {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgb(220 0 0 / 100%);
+  background-image: linear-gradient(
+    to top left,
+    rgb(0 0 0 / 20%),
+    rgb(0 0 0 / 20%) 30%,
+    rgb(0 0 0 / 0%)
+  );
+  box-shadow:
+    inset 2px 2px 3px rgb(255 255 255 / 60%),
+    inset -2px -2px 3px rgb(0 0 0 / 60%);
+}
+
+.styled:hover {
+  background-color: rgb(255 0 0 / 100%);
+}
+
+.styled:active {
+  box-shadow:
+    inset -2px -2px 3px rgb(255 255 255 / 60%),
+    inset 2px 2px 3px rgb(0 0 0 / 60%);
+}
+
+  </style>
+</head>
+<body>
+  <h1>Bouton Secret</h1>
+  <div id="grid">
+    <div onclick="mafonction(this.id)" id="1" class="styled"></div>
+    <div onclick="mafonction(this.id)" id="2" class="styled"></div>
+    <div onclick="mafonction(this.id)" id="3" class="styled"></div>
+    <div onclick="mafonction(this.id)" id="4" class="styled"></div>
+    <div onclick="mafonction(this.id)" id="5" class="styled"></div>
+    <div onclick="mafonction(this.id)" id="6" class="styled"></div>
+    <div onclick="mafonction(this.id)" id="7" class="styled"></div>
+    <div onclick="mafonction(this.id)" id="8" class="styled"></div>
+    <div onclick="mafonction(this.id)" id="9" class="styled"></div>
+  </div>
+  <div id="message"></div>
+
+  <script>
+function random(min, max) {
+    return Math.floor(Math.random() * (max-min)+min);
+  }  
+let numaleatoire = random(1, 10);
+let global = document.getElementById("grid");
+// console.log(global.appendChild);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.createElement('input');
+    button.type = 'button';
+    button.id = 'submit';
+    button.value = '1';
+    button.className = 'btn';
+ 
+    var container = document.getElementById('1');
+    container.appendChild(button);
+}, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.createElement('input');
+    button.type = 'button';
+    button.id = 'submit';
+    button.value = '2';
+    button.className = 'btn';
+ 
+    var container2 = document.getElementById('2');
+    container2.appendChild(button);
+}, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.createElement('input');
+    button.type = 'button';
+    button.id = 'submit';
+    button.value = '3';
+    button.className = 'btn';
+    
+    var container3 = document.getElementById('3');
+    container3.appendChild(button);
+}, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.createElement('input');
+    button.type = 'button';
+    button.id = 'submit';
+    button.value = '4';
+    button.className = 'btn';
+    
+    var container4 = document.getElementById('4');
+    container4.appendChild(button);
+}, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.createElement('input');
+    button.type = 'button';
+    button.id = 'submit';
+    button.value = '5';
+    button.className = 'btn';
+    
+    var container5 = document.getElementById('5');
+    container5.appendChild(button);
+}, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.createElement('input');
+    button.type = 'button';
+    button.id = 'submit';
+    button.value = '6';
+    button.className = 'btn';
+    
+    var container6 = document.getElementById('6');
+    container6.appendChild(button);
+}, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.createElement('input');
+    button.type = 'button';
+    button.id = 'submit';
+    button.value = '7';
+    button.className = 'btn';
+
+    var container7 = document.getElementById('7');
+    container7.appendChild(button);
+}, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.createElement('input');
+    button.type = 'button';
+    button.id = 'submit';
+    button.value = '8';
+    button.className = 'btn';
+   
+    var container8 = document.getElementById('8');
+    container8.appendChild(button);
+}, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.createElement('input');
+    button.type = 'button';
+    button.id = 'submit';
+    button.value = '9';
+    button.className = 'btn';
+    
+ 
+    var container9 = document.getElementById('9');
+    container9.appendChild(button);
+}, false);
+
+
+setTimeout(() => {
+  let boutn = document.querySelectorAll(".styles");
+  alert("Vous trainez trop le bon bouton est :   " +numaleatoire);
+  if (document.getElementById(+id)==numaleatoire) {
+    document.body.style.backgroundColor = "green";
+  }
+}, 10000);
+function mafonction(id) {
+// alert('id du bouton = '+id);
+
+  global.addEventListener("click", () => {
+    let essaie = document.getElementById(+id);
+
+  while (+id !== null) {
+    if (+id !== numaleatoire) {
+      alert('Vous avez cliqué sur le mauvais bouton!');
+      break;
+
+    } else {
+      alert("Félicitations enfin vous avez cliqué sur le bon!");
+      break;
+    }
+  }
+   
+    
+  })
+}
+  </script>
+</body>
+</html>
